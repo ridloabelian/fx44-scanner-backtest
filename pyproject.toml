@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fx44-scanner-backtest"
+version = "0.1.0"
+description = "44-Pair Multi-Session Scanner & >=200-Trade Quant Backtest Lab for Stingray/Harmonic & SMC setups"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "yfinance>=0.2.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+fx44 = "fx44.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
